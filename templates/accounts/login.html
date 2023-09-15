@@ -1,0 +1,37 @@
+
+
+
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <div class="wrapper" style="background-image: url('{% static 'images/bg-registration-form-2.jpg' %}');">
+			<div class="inner">
+				<div class="image-holder">
+					<img src="" alt="">
+				</div>
+				<form action="{% url 'login' %}" method="POST">
+          {% csrf_token %}
+          {% include 'alerts.html' %}
+					<h3>Login</h3>
+					<div class="form-wrapper">
+						<input type="text" placeholder="Username or Email Address" class="form-control" name="email">
+						<i class="zmdi zmdi-email"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="password" placeholder="Password" class="form-control" name="password">
+						<i class="zmdi zmdi-lock"></i>
+					</div>
+					<button>Login
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+					
+          <br><p><a href="{% url 'forgot_password' %}">Forgot Password</a></p>
+          <p>Don't have an account? <span><a href="{% url 'register' %}">Register here</a></span></p>
+				</form>
+			</div>
+		</div>
+		
+			
+
+
+
